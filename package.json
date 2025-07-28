@@ -1,12 +1,12 @@
 {
   "name": "vite_react_shadcn_ts",
   "private": true,
-  "homepage": "https://github.com/Environmental-Courses/Gifts",
+ "homepage": "https://environmental-courses.github.io/Gifts/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "deploy": "npm run build && gh-pages -d dist",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "predeploy": "npm run build",
     "build:dev": "vite build --mode development",
