@@ -2,22 +2,20 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
-// Remove vite-plugin-gh-pages - we'll use a different method
-// import { componentTagger } from "lovable-tagger";
-
 export default defineConfig({
-  base: '/Gifts/', // MUST match your repository name exactly
-  plugins: [
-    react(),
-    // componentTagger() - disable for now to isolate issues
-  ],
+  base: '/Gifts/', // Must match your EXACT repository name
+  plugins: [react()],
   build: {
     outDir: 'dist',
-    emptyOutDir: true
+    emptyOutDir: true,
+    sourcemap: false // Disable for production
   },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    port: 3000 // Optional: Set your preferred port
+  }
 });
