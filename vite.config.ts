@@ -1,25 +1,23 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import  ghPages  from "vite-plugin-gh-pages";
-import { componentTagger } from "lovable-tagger";
 
-/// <reference types="vitest" />
-/// <reference types="vite/client" />
+// Remove vite-plugin-gh-pages - we'll use a different method
+// import { componentTagger } from "lovable-tagger";
 
-export default defineConfig(({ mode }) => ({
-  server: {
-    host: "::",
-    port: 8080,
-  },
+export default defineConfig({
+  base: "/", // MUST match your repository name exactly
   plugins: [
     react(),
-    mode === "development" && componentTagger(),
-  ].filter(Boolean),
+    // componentTagger() - disable for now to isolate issues
+  ],
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: "/your-repo-name/", // replace with your GitHub repo name
-}));
+});
