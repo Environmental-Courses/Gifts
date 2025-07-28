@@ -6,7 +6,7 @@ import path from "path";
 // import { componentTagger } from "lovable-tagger";
 
 export default defineConfig({
-  base: "/", // MUST match your repository name exactly
+  base: "Gifts", // MUST match your repository name exactly
   plugins: [
     react(),
     // componentTagger() - disable for now to isolate issues
