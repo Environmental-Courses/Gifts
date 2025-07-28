@@ -11,7 +11,7 @@ const timelineEvents = [
   {
     id: 2,
     date: "April 2025",
-    title: "We saw eachothers facesl",
+    title: "We saw eachothers faces",
     description: "Seeing your face for the first time made my heart flutter. It was even more beautiful than i imagined.",
     icon: "📱"
   },
