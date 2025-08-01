@@ -1,6 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import coupleImage from "@/assets/couple-silhouette.jpg";
 import coffeeImage from "@/assets/coffee-memory.jpg";
+import distance from "@/assets/couplesimg1.jpeg";
+import lateNightVideo from "@/assets/heart-vmake.mp4";
+import text from "@/assets/text.png";
 
 const memories = [
   {
@@ -12,14 +15,14 @@ const memories = [
   },
   {
     id: 2,
-    image: coffeeImage,
-    title: "",
+    image: distance,
+    title: "Miles Apart, Close at Heart",
     date: "Every Day",
-    description: "Even though we're miles apart, we share our morning coffee and start each day together."
+    description: "Even though we're miles apart, I still feel close to you. It's strange how someone can be physically distant but still constantly on your mind. ."
   },
   {
     id: 3,
-    image: coupleImage,
+    image: text,
     title: "Late Night Conversations",
     date: "Too many to count",
     description: "Talking until the sun comes up, sharing dreams, fears, and everything in between."
@@ -27,7 +30,7 @@ const memories = [
   {
     id: 4,
     image: coffeeImage,
-    title: "",
+    title: "Our Love",
     date: "Growing every day",
     description: "Every song tells our story. Each melody carries a piece of my heart to you."
   }
@@ -54,11 +57,22 @@ const MemoryGallery = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative overflow-hidden">
-                <img 
-                  src={memory.image} 
-                  alt={memory.title}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+              {memory.id === 4 ? (
+  <video
+    src={lateNightVideo}
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="w-full h-64  object-cover  group-hover:scale-105 transition-transform duration-300"
+  />
+) : (
+  <img 
+    src={memory.image} 
+    alt={memory.title}
+    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+  />
+)}
                 <div className="absolute inset-0 bg-gradient-romantic opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
               </div>
               <CardContent className="p-6">
